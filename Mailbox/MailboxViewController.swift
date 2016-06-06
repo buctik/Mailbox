@@ -16,6 +16,10 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var searchImageView: UIImageView!
     @IBOutlet weak var feedImageView: UIImageView!
     
+    @IBOutlet weak var singleMessageView: UIImageView!
+    var messageViewOriginalCenter: CGPoint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +35,25 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didPanMessage(sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translationInView(view)
+        
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            print("Gesture began")
+        messageViewOriginalCenter = singleMessageView.center
+            
+        } else if sender.state == UIGestureRecognizerState.Changed {
+            singleMessageView.center = CGPoint(x: self.messageViewOriginalCenter.x + translation.x, y: self.messageViewOriginalCenter.y)
+            
+            print("Gesture is changing")
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            
+            print("Gesture ended")
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
