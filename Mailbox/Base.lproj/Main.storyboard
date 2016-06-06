@@ -18,11 +18,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="help_label" id="L56-p8-Clq">
-                                        <rect key="frame" x="0.0" y="4" width="320" height="37"/>
+                                        <rect key="frame" x="0.0" y="2" width="320" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="search" id="dJx-6U-nY8">
-                                        <rect key="frame" x="0.0" y="41" width="320" height="42"/>
+                                        <rect key="frame" x="0.0" y="35" width="320" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="feed" id="acG-9v-VC0">
@@ -30,31 +30,23 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" id="Cs5-WF-Qzb">
-                                        <rect key="frame" x="0.0" y="81" width="320" height="85"/>
+                                        <rect key="frame" x="0.0" y="77" width="320" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fmv-Fg-i6m">
-                                                <rect key="frame" x="0.0" y="-8" width="320" height="101"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="NZH-In-Geq">
-                                                <rect key="frame" x="0.0" y="-8" width="320" height="101"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_icon" id="dqh-dw-fxL">
-                                                <rect key="frame" x="11" y="28" width="25" height="25"/>
+                                                <rect key="frame" x="8" y="31" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="delete_icon" id="Zyr-Oi-B7k">
-                                                <rect key="frame" x="4" y="44" width="25" height="25"/>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="delete_icon" id="DbP-td-8rO">
+                                                <rect key="frame" x="8" y="31" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="archive_icon" id="H1m-mN-XpW">
-                                                <rect key="frame" x="2" y="16" width="25" height="25"/>
+                                                <rect key="frame" x="8" y="31" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="list_icon" id="OTt-aX-aAO">
-                                                <rect key="frame" x="2" y="46" width="25" height="25"/>
+                                                <rect key="frame" x="8" y="31" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="message" id="1DX-kt-z0s">
@@ -74,11 +66,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="archiveImageView" destination="H1m-mN-XpW" id="r1q-OX-UUw"/>
+                        <outlet property="deleteImageView" destination="DbP-td-8rO" id="mlP-cm-niU"/>
                         <outlet property="feedImageView" destination="acG-9v-VC0" id="AX6-zI-NIW"/>
                         <outlet property="helpLabelImageView" destination="L56-p8-Clq" id="4dS-7d-skq"/>
+                        <outlet property="laterImageView" destination="dqh-dw-fxL" id="rtM-g5-L01"/>
+                        <outlet property="listImageView" destination="OTt-aX-aAO" id="Vr7-oD-Xo3"/>
+                        <outlet property="messageImageView" destination="1DX-kt-z0s" id="TNF-Nd-Wdk"/>
                         <outlet property="scrollView" destination="9n4-1W-Hl9" id="HX0-1n-iRX"/>
                         <outlet property="searchImageView" destination="dJx-6U-nY8" id="MzO-WY-5gW"/>
-                        <outlet property="singleMessageView" destination="1DX-kt-z0s" id="RJl-3U-Lia"/>
+                        <outlet property="singleMessageView" destination="Cs5-WF-Qzb" id="PTG-rh-V7r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
