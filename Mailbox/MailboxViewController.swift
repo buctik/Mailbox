@@ -19,6 +19,10 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var helpLabelImageView: UIImageView!
     @IBOutlet weak var searchImageView: UIImageView!
     @IBOutlet weak var feedImageView: UIImageView!
+    @IBOutlet weak var rescheduleImageView: UIImageView!
+    @IBOutlet weak var listOptionsImageView: UIImageView!
+    
+    
     
     //MessageView container outlet
     @IBOutlet weak var singleMessageView: UIView!
@@ -56,7 +60,8 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         scrollView.contentSize = CGSize(width: 320, height: 1000)
         
-        
+        rescheduleImageView.alpha = 0
+        listOptionsImageView.alpha = 0
         
         
         // Do any additional setup after loading the view.
@@ -233,23 +238,84 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
                     UIView.animateWithDuration(0.8) {
                         self.messageImageView.frame.origin.x = -320
                         self.laterImageView.frame.origin.x = -30
+                        
+                        self.scrollView.alpha = 0
+                        self.rescheduleImageView.alpha = 1
+                        self.listOptionsImageView.alpha = 0
                     }
                 }
+            } else if (messageImageView.center.x < singleMessageView.center.x && messageImageView.center.x - singleMessageView.center.x <= -260) {
+                UIView.animateWithDuration(0.3) {
+            
+                    self.messageImageView.frame.origin.x = -320
+                    self.listImageView.frame.origin.x = -30
+                    
+                    self.scrollView.alpha = 0
+                    self.rescheduleImageView.alpha = 0
+                    self.listOptionsImageView.alpha = 1
+                    
+                }
+                
+               
                 
                 
             } else if (messageImageView.center.x > singleMessageView.center.x && messageImageView.center.x - singleMessageView.center.x >= 0 && messageImageView.center.x - singleMessageView.center.x < 60) {
                 
                 messageImageView.center = messageViewOriginalCenter
+            
+            } else if (messageImageView.center.x > singleMessageView.center.x && messageImageView.center.x - singleMessageView.center.x >= 60 && messageImageView.center.x - singleMessageView.center.x < 260) {
+                
+                UIView.animateWithDuration(0.3) {
+                    self.messageImageView.frame.origin.x = 320
+                    self.archiveImageView.frame.origin.x = 300
+                    
+                    
+                }
+                
+                UIView.animateWithDuration(0.3) {
+                    
+                    self.singleMessageView.alpha = 0
+                    
+                    self.scrollView.frame.origin.y -= 86
+                    self.helpLabelImageView.frame.origin.y += 86
+                    self.searchImageView.frame.origin.y += 86
+                    
+                    self.scrollView.alpha = 1
+                    self.rescheduleImageView.alpha = 0
+                    self.listOptionsImageView.alpha = 0
+                    
+                }
+            } else if (messageImageView.center.x > singleMessageView.center.x && messageImageView.center.x - singleMessageView.center.x >= 260) {
+                
+                UIView.animateWithDuration(0.3) {
+                    self.messageImageView.frame.origin.x = 320
+                    self.deleteImageView.frame.origin.x = 300
+                    
+                    
+                }
+                
+                UIView.animateWithDuration(0.3) {
+                    
+                    self.singleMessageView.alpha = 0
+                    
+                    self.scrollView.frame.origin.y -= 86
+                    self.helpLabelImageView.frame.origin.y += 86
+                    self.searchImageView.frame.origin.y += 86
+                    
+                    self.scrollView.alpha = 1
+                    self.rescheduleImageView.alpha = 0
+                    self.listOptionsImageView.alpha = 0
+                
+                }
+
                 
             }
             
             
             
             
-            
-            
            // listImageView.center  = listViewOriginalCenter
-            archiveImageView.center = archiveViewOriginalCenter
+           // archiveImageView.center = archiveViewOriginalCenter
             deleteImageView.center = deleteViewOriginalCenter
            // laterImageView.center = laterViewOriginalCenter
  
@@ -268,6 +334,80 @@ class MailboxViewController: UIViewController, UIScrollViewDelegate {
         
     }
 
+    @IBAction func didTapRescheduleView(sender: UITapGestureRecognizer) {
+        
+        self.scrollView.alpha = 1
+        self.rescheduleImageView.alpha = 0
+        self.listOptionsImageView.alpha = 0
+        
+        UIView.animateWithDuration(0.3) {
+            self.messageImageView.frame.origin.x = 320
+            self.archiveImageView.frame.origin.x = 300
+            
+            
+        }
+        
+        UIView.animateWithDuration(0.3) {
+            
+            self.singleMessageView.alpha = 0
+            
+            self.scrollView.frame.origin.y -= 86
+            self.helpLabelImageView.frame.origin.y += 86
+            self.searchImageView.frame.origin.y += 86
+            
+            self.scrollView.alpha = 1
+            self.rescheduleImageView.alpha = 0
+            self.listOptionsImageView.alpha = 0
+            
+        }
+        
+        
+    }
+    
+    
+    
+    @IBAction func didTapListOption(sender: UITapGestureRecognizer) {
+        
+        print("didTapListOption view")
+        self.scrollView.alpha = 1
+        self.rescheduleImageView.alpha = 0
+        self.listOptionsImageView.alpha = 0
+        
+        UIView.animateWithDuration(0.3) {
+            self.messageImageView.frame.origin.x = 320
+            self.archiveImageView.frame.origin.x = 300
+            
+            
+        }
+        
+        UIView.animateWithDuration(0.3) {
+            
+            self.singleMessageView.alpha = 0
+            
+            self.scrollView.frame.origin.y -= 86
+            self.helpLabelImageView.frame.origin.y += 86
+            self.searchImageView.frame.origin.y += 86
+            
+            self.scrollView.alpha = 1
+            self.rescheduleImageView.alpha = 0
+            self.listOptionsImageView.alpha = 0
+            
+        }
+
+    }
+
+    
+    @IBAction func didTapFeedView(sender: UITapGestureRecognizer) {
+        
+        self.singleMessageView.alpha = 1
+        self.messageImageView.frame.origin.x = 0
+        
+        self.scrollView.frame.origin.y += 86
+        self.helpLabelImageView.frame.origin.y -= 86
+        self.searchImageView.frame.origin.y -= 86
+        
+    }
+    
     /*
     // MARK: - Navigation
 

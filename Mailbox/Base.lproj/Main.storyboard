@@ -13,24 +13,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="reschedule" id="TtS-cp-AZx">
+                                <rect key="frame" x="-24" y="0.0" width="368" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="GY2-7b-uzm" appends="YES" id="cns-Cs-1LV"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list" id="HF9-jc-bRe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="562"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bFf-MG-cUa" appends="YES" id="JOx-W6-Xrx"/>
+                                </connections>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9n4-1W-Hl9">
-                                <rect key="frame" x="0.0" y="123" width="320" height="445"/>
+                                <rect key="frame" x="0.0" y="123" width="320" height="619"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="feed" id="acG-9v-VC0">
+                                        <rect key="frame" x="0.0" y="161" width="320" height="1202"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="HN6-dt-7HM" appends="YES" id="gNQ-KJ-7xC"/>
+                                        </connections>
+                                    </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="help_label" id="L56-p8-Clq">
-                                        <rect key="frame" x="0.0" y="2" width="320" height="37"/>
+                                        <rect key="frame" x="0.0" y="-1" width="320" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="search" id="dJx-6U-nY8">
                                         <rect key="frame" x="0.0" y="35" width="320" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="feed" id="acG-9v-VC0">
-                                        <rect key="frame" x="0.0" y="164" width="320" height="1202"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" id="Cs5-WF-Qzb">
-                                        <rect key="frame" x="0.0" y="77" width="320" height="86"/>
+                                        <rect key="frame" x="0.0" y="73" width="320" height="87"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="delete_icon" id="DbP-td-8rO">
@@ -50,7 +70,7 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="message" id="1DX-kt-z0s">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+                                                <rect key="frame" x="0.0" y="1" width="320" height="87"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <gestureRecognizers/>
                                                 <connections>
@@ -72,7 +92,9 @@
                         <outlet property="helpLabelImageView" destination="L56-p8-Clq" id="4dS-7d-skq"/>
                         <outlet property="laterImageView" destination="dqh-dw-fxL" id="rtM-g5-L01"/>
                         <outlet property="listImageView" destination="OTt-aX-aAO" id="Vr7-oD-Xo3"/>
+                        <outlet property="listOptionsImageView" destination="HF9-jc-bRe" id="cLc-rP-Plx"/>
                         <outlet property="messageImageView" destination="1DX-kt-z0s" id="TNF-Nd-Wdk"/>
+                        <outlet property="rescheduleImageView" destination="TtS-cp-AZx" id="O1K-hU-uyf"/>
                         <outlet property="scrollView" destination="9n4-1W-Hl9" id="HX0-1n-iRX"/>
                         <outlet property="searchImageView" destination="dJx-6U-nY8" id="MzO-WY-5gW"/>
                         <outlet property="singleMessageView" destination="Cs5-WF-Qzb" id="PTG-rh-V7r"/>
@@ -84,8 +106,23 @@
                         <action selector="didPanMessage:" destination="BYZ-38-t0r" id="bVt-3F-eO3"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="GY2-7b-uzm">
+                    <connections>
+                        <action selector="didTapRescheduleView:" destination="BYZ-38-t0r" id="qZp-hh-MGe"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bFf-MG-cUa">
+                    <connections>
+                        <action selector="didTapListOption:" destination="BYZ-38-t0r" id="ycF-Qz-E8H"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="HN6-dt-7HM">
+                    <connections>
+                        <action selector="didTapFeedView:" destination="BYZ-38-t0r" id="dIa-9d-eyj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="162" y="330"/>
+            <point key="canvasLocation" x="141" y="330"/>
         </scene>
     </scenes>
     <resources>
@@ -94,8 +131,10 @@
         <image name="feed" width="320" height="1202"/>
         <image name="help_label" width="320" height="37"/>
         <image name="later_icon" width="25" height="25"/>
+        <image name="list" width="320" height="568"/>
         <image name="list_icon" width="25" height="25"/>
         <image name="message" width="320" height="86"/>
+        <image name="reschedule" width="320" height="568"/>
         <image name="search" width="320" height="42"/>
     </resources>
 </document>
