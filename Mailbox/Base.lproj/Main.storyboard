@@ -33,10 +33,6 @@
                                         <rect key="frame" x="0.0" y="77" width="320" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_icon" id="dqh-dw-fxL">
-                                                <rect key="frame" x="8" y="31" width="25" height="25"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                            </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="delete_icon" id="DbP-td-8rO">
                                                 <rect key="frame" x="8" y="31" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask"/>
@@ -46,7 +42,11 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="list_icon" id="OTt-aX-aAO">
-                                                <rect key="frame" x="8" y="31" width="25" height="25"/>
+                                                <rect key="frame" x="287" y="31" width="25" height="25"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="later_icon" id="dqh-dw-fxL">
+                                                <rect key="frame" x="287" y="30" width="25" height="25"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </imageView>
                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="message" id="1DX-kt-z0s">
